@@ -15,9 +15,9 @@ defmodule Nostrum.Application do
 
     children = [
       Nostrum.Api.Ratelimiter,
-      Nostrum.Shard.Connector,
-      Nostrum.Cache.CacheSupervisor,
-      {Nostrum.Shard.Supervisor, num_shards}
+      # Nostrum.Shard.Connector,
+      Nostrum.Cache.CacheSupervisor
+      # {Nostrum.Shard.Supervisor, num_shards}
     ]
 
     if Application.get_env(:nostrum, :dev, nil) do
